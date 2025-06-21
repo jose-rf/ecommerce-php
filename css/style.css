@@ -1,0 +1,26 @@
+body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
+.produtos { display: flex; flex-wrap: wrap; gap: 20px; }
+.produto { background: #fff; padding: 10px; border: 1px solid #ddd; width: 200px; text-align: center; }
+.topo {
+    background: #222;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topo .menu a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.topo .menu a:hover {
+    text-decoration: underline;
+}
+
+.topo .logo {
+    font-size: 20px;
+}

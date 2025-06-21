@@ -1,0 +1,1 @@
+<?php echo 'Detalhes do Produto'; ?>
