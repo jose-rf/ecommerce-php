@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('includes/db.php');
+include('../includes/db.php');
 
 if (isset($_GET['add'])) {
     $id = intval($_GET['add']);
@@ -20,6 +20,7 @@ if (isset($_GET['del'])) {
 }
 
 echo "<h1>Seu Carrinho</h1>";
+echo '<p><a href="javascript:history.back()">⬅️ Voltar</a> | <a href="../index.php">🏠 Loja</a></p>';
 $total = 0;
 if (!empty($_SESSION['carrinho'])) {
     foreach ($_SESSION['carrinho'] as $id => $qtd) {
@@ -33,7 +34,10 @@ if (!empty($_SESSION['carrinho'])) {
         }
     }
     echo "<h3>Total: R$ $total</h3>";
-    echo "<a href='processa_compra.php'>Finalizar Compra</a>";
+    echo "<form action='finalizar_compras.php' method='post'>
+    <button type='submit'>🛍️ Finalizar Compra</button>
+</form>";
+
 } else {
     echo "<p>Carrinho vazio.</p>";
 }
