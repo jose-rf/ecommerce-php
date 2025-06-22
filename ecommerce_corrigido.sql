@@ -2,14 +2,14 @@
 CREATE DATABASE IF NOT EXISTS ecommerce;
 USE ecommerce;
 
-CREATE TABLE usuarios (
+CREATE TABLE IF NOT EXISTS usuarios (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(100),
   email VARCHAR(100) UNIQUE,
   senha VARCHAR(255)
 );
 
-CREATE TABLE produtos (
+CREATE TABLE IF NOT EXISTS produtos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(100),
   descricao TEXT,
@@ -17,14 +17,14 @@ CREATE TABLE produtos (
   imagem VARCHAR(255)
 );
 
-CREATE TABLE pedidos (
+CREATE TABLE IF NOT EXISTS pedidos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   usuario_id INT,
   data DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
 
-CREATE TABLE itens_pedido (
+CREATE TABLE IF NOT EXISTS itens_pedido (
   id INT AUTO_INCREMENT PRIMARY KEY,
   pedido_id INT,
   produto_id INT,
