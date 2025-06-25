@@ -110,6 +110,7 @@ if (isset($_GET['del'])) {
     <?php else: ?>
         <p>Carrinho vazio.</p>
     <?php endif; ?>
+    <?php include('../includes/rodape.php')?>
 </main>
 
 </body>

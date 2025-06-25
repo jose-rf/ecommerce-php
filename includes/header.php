@@ -7,11 +7,12 @@
 </head>
 <body>
   <div class="topo">
-    <div class="logo"><img src="/Ecommerce/imagens/lumora2.png" alt="Logo lumora"></div>
+    <div class="logo"><a href="/Ecommerce/index.php"><img src="/Ecommerce/imagens/lumora2.png" alt="Logo lumora"></a></div>
     <div class="menu">
+    <a href="/Ecommerce/index.php">Loja</a>
       <a href="/Ecommerce/pages/carrinho.php">Carrinho</a>
       <?php if (isset($_SESSION['usuario'])): ?>
-        <a href="logout.php">Sair</a>
+        <a href="/Ecommerce/logout.php">Sair</a>
       <?php else: ?>
         <a href="/Ecommerce/login.php">Login</a>
         <a href="/Ecommerce/cadastro.php">Cadastro</a>

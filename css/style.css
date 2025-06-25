@@ -52,7 +52,7 @@ body {
   color: var(--vermelho);
 }
 
-/* Título principal */
+/* Título */
 h1 {
   text-align: center;
   margin: 2rem 0;
@@ -130,10 +130,6 @@ h1 {
   padding: 5px 10px;
   margin-top: 8px;
 }
-
-/* ===========================
-   Estilos para o Carrinho
-   =========================== */
 
 /* Tabela do carrinho */
 .carrinho-tabela {
@@ -221,7 +217,7 @@ body.loginz {
     background-color: var(--branco);
   }
   
-  /* caixinha de login */
+  /* caixa de login */
   .caixa-login {
     background: #fafafa;
     border-radius: 12px;
@@ -297,7 +293,7 @@ body.loginz {
     color: var(--preto);
   }
   
-/* Página de finalização */
+/*  Bloco: Pagina de finalização */
 .finalizar-page {
     background-color: var(--branco);
     padding: 2rem;
@@ -416,5 +412,65 @@ body.loginz {
     font-weight: bold;
     text-decoration: underline;
     margin: 0 6px;
+  }
+  
+  /* Bloco: Rodapé */
+
+  .rodape {
+    background-color: var(--vermelho);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px 10px 0 0;
+    margin-top: 40px;
+  }
+
+  .rodape img{
+    width: 150px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 15px;
+  }
+
+  .rodape .txtRodape{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--branco);
+    font-size: 10px;
+    gap: 40px;
+  }
+
+  .rodape p{
+    margin-right: 40px;
+  }
+
+  .mensagem-final {
+    max-width: 600px;
+    margin: 5rem auto;
+    padding: 2rem;
+    background-color: #f0f9ff;
+    border: 1px solid #a0d2f0;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color: #23547a;
+  }
+  
+  .mensagem-final h2 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+  
+  .mensagem-final a {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--vermelho);
+    text-decoration: underline;
+    transition: color 0.2s;
+  }
+  
+  .mensagem-final a:hover {
+    color: #b20000;
   }
   

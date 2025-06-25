@@ -86,7 +86,9 @@ if (empty($_SESSION['carrinho'])) {
             <option value="boleto">Boleto Bancário</option>
             <option value="pix">PIX</option>
           </select>
-          <button type="submit">Confirmar Compra</button>
+          <form action="processa_compra.php" method="post">
+            <button type="submit" class="btn-finalizar">Confirmar compra</button>
+        </form>
         </form>
       </section>
     </div>

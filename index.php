@@ -21,6 +21,8 @@ include('includes/db.php');
 include('includes/header.php'); // isso já abre <html>, <head> e <body>
 ?>
 
+<h1>Sua Loja De Tecnologia!</h1>
+
 <div class="produtos">
   <?php
   $sql = "SELECT * FROM produtos";
@@ -33,7 +35,7 @@ include('includes/header.php'); // isso já abre <html>, <head> e <body>
   while($row = $result->fetch_assoc()):
   ?>
     <div class="produto">
-      <img src="/Ecommerce/img/<?php echo $row['imagem']; ?>" width="150">
+      <img src="<?php echo $row['imagem']; ?>" width="150">
       <h2><?php echo $row['nome']; ?></h2>
       <p>R$ <?php echo number_format($row['preco'], 2, ',', '.'); ?></p>
       <a href="/Ecommerce/pages/carrinho.php?add=<?php echo $row['id']; ?>">Adicionar ao carrinho</a><br>
@@ -46,3 +48,5 @@ include('includes/header.php'); // isso já abre <html>, <head> e <body>
     </div>
   <?php endwhile; ?>
 </div>
+
+
