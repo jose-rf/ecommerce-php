@@ -47,6 +47,7 @@ include('includes/header.php'); // isso já abre <html>, <head> e <body>
       <a href="?favoritar=<?php echo $id; ?>"><?php echo $icone; ?> Favoritar</a>
     </div>
   <?php endwhile; ?>
+  
 </div>
 
-
+<?php include('includes/rodape.php')?>
