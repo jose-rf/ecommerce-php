@@ -91,7 +91,7 @@ if (empty($_SESSION['carrinho'])) {
       </section>
     </div>
 
-    <p style="margin-top: 1.5rem;"><a href="carrinho.php">⬅️ Voltar ao carrinho</a></p>
+    <p style="margin-top: 1.5rem;"><a href="carrinho.php">Voltar ao carrinho</a></p>
   </div>
 </body>
 </html>

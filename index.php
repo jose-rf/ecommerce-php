@@ -36,7 +36,7 @@ include('includes/header.php'); // isso já abre <html>, <head> e <body>
       <img src="/Ecommerce/img/<?php echo $row['imagem']; ?>" width="150">
       <h2><?php echo $row['nome']; ?></h2>
       <p>R$ <?php echo number_format($row['preco'], 2, ',', '.'); ?></p>
-      <a href="/Ecommerce/pages/carrinho.php?add=<?php echo $row['id']; ?>">🛒 Adicionar ao carrinho</a><br>
+      <a href="/Ecommerce/pages/carrinho.php?add=<?php echo $row['id']; ?>">Adicionar ao carrinho</a><br>
       <?php
       $id = $row['id'];
       $favoritado = isset($_SESSION['favoritos']) && in_array($id, $_SESSION['favoritos']);

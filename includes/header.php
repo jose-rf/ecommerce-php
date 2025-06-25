@@ -7,16 +7,14 @@
 </head>
 <body>
   <div class="topo">
-    <div class="logo"><strong>Lumora</strong></div>
+    <div class="logo"><img src="/Ecommerce/imagens/lumora2.png" alt="Logo lumora"></div>
     <div class="menu">
-      <a href="/Ecommerce/pages/carrinho.php">🛒 Carrinho</a>
+      <a href="/Ecommerce/pages/carrinho.php">Carrinho</a>
       <?php if (isset($_SESSION['usuario'])): ?>
         <a href="logout.php">Sair</a>
       <?php else: ?>
-        <a href="login.php">Login</a>
-        <a href="cadastro.php">Cadastro</a>
+        <a href="/Ecommerce/login.php">Login</a>
+        <a href="/Ecommerce/cadastro.php">Cadastro</a>
       <?php endif; ?>
     </div>
   </div>
-
-  <h1>Bem-vindo à Loja</h1>

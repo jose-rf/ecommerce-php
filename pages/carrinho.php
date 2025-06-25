@@ -46,13 +46,8 @@ if (isset($_GET['del'])) {
 </head>
 <body>
 
-<header class="topo">
-    <div class="logo">Lumora</div>
-    <nav class="menu">
-        <a href="javascript:history.back()">⬅️ Voltar</a>
-        <a href="../index.php">🏠 Loja</a>
-    </nav>
-</header>
+    <?php include('../includes/header.php')?>
+
 
 <main>
     <h1>Seu Carrinho</h1>
