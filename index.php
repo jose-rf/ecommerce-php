@@ -4,13 +4,13 @@ session_start();
 if (isset($_GET['favoritar'])) {
   $id = intval($_GET['favoritar']);
   if (!isset($_SESSION['favoritos'])) {
-      $_SESSION['favoritos'] = [];
+    $_SESSION['favoritos'] = [];
   }
 
   if (in_array($id, $_SESSION['favoritos'])) {
-      $_SESSION['favoritos'] = array_diff($_SESSION['favoritos'], [$id]);
+    $_SESSION['favoritos'] = array_diff($_SESSION['favoritos'], [$id]);
   } else {
-      $_SESSION['favoritos'][] = $id;
+    $_SESSION['favoritos'][] = $id;
   }
 
   header("Location: index.php");
@@ -18,8 +18,37 @@ if (isset($_GET['favoritar'])) {
 }
 
 include('includes/db.php'); 
-include('includes/header.php'); // isso já abre <html>, <head> e <body>
+include('includes/header.php'); 
+
+// Verifica se é administrador
+$isAdmin = false;
+
+if (isset($_SESSION['usuario'])) {
+  $idUsuario = $_SESSION['usuario'];
+  $sqlAdmin = "SELECT administrador FROM usuarios WHERE id = ?";
+  $stmt = $conn->prepare($sqlAdmin);
+  $stmt->bind_param("i", $idUsuario);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  if ($row = $result->fetch_assoc()) {
+    $isAdmin = $row['administrador'] == 1;
+  }
+  $stmt->close();
+}
 ?>
+
+<!-- Botão do painel admin -->
+<?php if ($isAdmin): ?>
+  <div style="text-align: right; margin: 20px;">
+    <a href="admin.php" style="
+      background: #2c3e50;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+    ">🛠 Painel</a>
+  </div>
+<?php endif; ?>
 
 <h1>Sua Loja De Tecnologia!</h1>
 
@@ -32,7 +61,7 @@ include('includes/header.php'); // isso já abre <html>, <head> e <body>
     echo "<p style='color: red;'>Nenhum produto encontrado.</p>";
   }
 
-  while($row = $result->fetch_assoc()):
+  while ($row = $result->fetch_assoc()):
   ?>
     <div class="produto">
       <img src="<?php echo $row['imagem']; ?>" width="150">
@@ -47,7 +76,6 @@ include('includes/header.php'); // isso já abre <html>, <head> e <body>
       <a href="?favoritar=<?php echo $id; ?>"><?php echo $icone; ?> Favoritar</a>
     </div>
   <?php endwhile; ?>
-  
 </div>
 
-<?php include('includes/rodape.php')?>
+<?php include('includes/rodape.php'); ?>

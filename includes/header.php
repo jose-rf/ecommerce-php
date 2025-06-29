@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Loja Virtual</title>
-  <link rel="stylesheet" href="/Ecommerce/css/style.css?v=1.0">
+  <link rel="stylesheet" href="/ecommerce/css/style.css?v=1.0">
 </head>
 <body>
   <div class="topo">

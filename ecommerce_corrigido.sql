@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS usuarios (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(100),
   email VARCHAR(100) UNIQUE,
-  senha VARCHAR(255)
+  senha VARCHAR(255),
+  administrador BOOLEAN DEFAULT 0
 );
 
 -- Tabela de categorias
@@ -74,4 +75,9 @@ INSERT INTO produtos (nome, descricao, preco, imagem, categoria_id) VALUES
 ('Cabo HDMI 2.1', 'Cabo com suporte a 8K e 120Hz', 59.90, 'https://cdn.pixabay.com/photo/2016/11/29/03/53/hdmi-1869232_1280.jpg', 4),
 ('Adaptador USB Wi-Fi', 'Mini adaptador Wi-Fi 5GHz USB', 89.00, 'https://cdn.pixabay.com/photo/2020/04/02/17/03/usb-4994387_1280.jpg', 4),
 ('Camiseta Tech', 'Camiseta de algodão com estampa moderna', 59.90, 'https://cdn.pixabay.com/photo/2016/03/27/22/16/t-shirt-1280976_1280.jpg', 4);
+
+INSERT INTO usuarios (nome, email, senha, administrador) VALUES
+('Administrador', 'admin@lumora.com', '$2y$10$qypsGMLJlvXRMoqM518SG.W1cLrsN7t0Oer4wx3Vma60SMk8MBfcS', 1);
+-- Senha: "teste"
+
 
