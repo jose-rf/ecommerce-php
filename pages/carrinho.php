@@ -2,6 +2,23 @@
 session_start();
 include('../includes/db.php');
 
+// MENU
+$isAdmin = false;
+if (isset($_SESSION['usuario'])) {
+  $idUsuario = $_SESSION['usuario'];
+  $sqlAdmin = "SELECT administrador FROM usuarios WHERE id = ?";
+  $stmt = $conn->prepare($sqlAdmin);
+  $stmt->bind_param("i", $idUsuario);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  if ($row = $result->fetch_assoc()) {
+    $isAdmin = $row['administrador'] == 1;
+  }
+  $stmt->close();
+}
+
+include('../includes/header.php');
+
 // Atualizar quantidades no carrinho (via POST)
 if (isset($_POST['update'])) {
     foreach ($_POST['quantidade'] as $id => $qtd) {
@@ -45,8 +62,6 @@ if (isset($_GET['del'])) {
     <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
-
-    <?php include('../includes/header.php')?>
 
 
 <main>

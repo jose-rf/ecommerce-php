@@ -18,11 +18,9 @@ if (isset($_GET['favoritar'])) {
 }
 
 include('includes/db.php'); 
-include('includes/header.php'); 
 
-// Verifica se é administrador
+// VERIFICAÇÃO DO ADMIN ANTES DO HEADER
 $isAdmin = false;
-
 if (isset($_SESSION['usuario'])) {
   $idUsuario = $_SESSION['usuario'];
   $sqlAdmin = "SELECT administrador FROM usuarios WHERE id = ?";
@@ -35,20 +33,9 @@ if (isset($_SESSION['usuario'])) {
   }
   $stmt->close();
 }
-?>
 
-<!-- Botão do painel admin -->
-<?php if ($isAdmin): ?>
-  <div style="text-align: right; margin: 20px;">
-    <a href="admin.php" style="
-      background: #2c3e50;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 8px;
-    ">🛠 Painel</a>
-  </div>
-<?php endif; ?>
+include('includes/header.php'); // Header pode usar $isAdmin para mostrar o botão admin
+?>
 
 <h1>Sua Loja De Tecnologia!</h1>
 
