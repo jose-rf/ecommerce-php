@@ -474,3 +474,47 @@ body.loginz {
     color: #b20000;
   }
   
+
+  /*bloco da barra de pesquisa*/
+  .barra-pesquisa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 30px auto;
+  padding: 10px 20px;
+  border-radius: 15px;
+
+  /* Fundo translúcido */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  max-width: 600px;
+}
+
+.barra-pesquisa input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
+.barra-pesquisa button {
+  padding: 10px 15px;
+  background-color: rgba(0, 123, 255, 0.8);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.barra-pesquisa button:hover {
+  background-color: rgba(0, 123, 255, 1);
+}
