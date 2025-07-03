@@ -1,6 +1,6 @@
 <?php
     include('includes/header.php');//para manter a header depois da pesquisa, para manter o visual
-    include('includes/bd.php');//incluir a conexao com o banco
+    include('includes/db.php');//incluir a conexao com o banco
 
     if (isset($_GET['busca'])) {
     $termo = trim($_GET['busca']);
