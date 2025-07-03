@@ -37,6 +37,9 @@ if (isset($_SESSION['usuario'])) {
 include('includes/header.php'); // Header pode usar $isAdmin para mostrar o botão admin
 ?>
 
+<?php include('busca.php'); //incluindo a barra de pesquisa do projeto?>
+
+
 <h1>Sua Loja De Tecnologia!</h1>
 
 <div class="produtos">
