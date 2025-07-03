@@ -518,3 +518,33 @@ body.loginz {
 .barra-pesquisa button:hover {
   background-color: rgba(0, 123, 255, 1);
 }
+
+/*bloco do produto da aba favoritada*/
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.produto {
+  width: 180px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.produto img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.produto:hover {
+  transform: translateY(-3px);
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}

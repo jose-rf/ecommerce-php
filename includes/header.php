@@ -15,6 +15,8 @@
       <?php if (isset($_SESSION['usuario'])): ?>
         <a href="/Ecommerce/logout.php">Sair</a>
 
+        <a href="/Ecommerce/favoritos.php">❤️ Favoritos</a>
+
         <?php if (isset($isAdmin) && $isAdmin): ?>
           <a href="/Ecommerce/admin.php" style="
             color: white;
