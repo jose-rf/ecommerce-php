@@ -631,3 +631,17 @@ body.loginz {
   color: #444;
   margin: 4px 0;
 }
+
+
+/*estilizacao do botao limpar filtros*/
+.botao-limpar {
+  padding: 8px 12px;
+  background-color: #aaa;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+.botao-limpar:hover {
+  background-color: #777;
+}

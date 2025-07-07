@@ -10,6 +10,16 @@ if (!isset($_SESSION['usuario'])) {
     exit();
 }
 
+// tratamento do botão "Desfavoritar"
+if (isset($_GET['remover'])) {
+    $idRemover = intval($_GET['remover']);
+    $_SESSION['favoritos'] = array_diff($_SESSION['favoritos'], [$idRemover]);
+
+    // redireciona limpando o parâmetro da URL
+    header("Location: favoritos.php");
+    exit();
+}
+
 // verifica se existem produtos favoritados
 if (!isset($_SESSION['favoritos']) || empty($_SESSION['favoritos'])) {
     echo "<h2>Favoritos</h2>";
@@ -34,11 +44,16 @@ echo "<div class='produtos'>";
 
 while ($row = $result->fetch_assoc()) {
 ?>
-    <div class="produto">
+    <div class="produto" style="border: 1px solid #ddd; padding: 10px; margin-bottom: 10px;">
         <img src="<?php echo $row['imagem']; ?>" width="150">
-        <h3><?php echo $row['nome']; ?></h3>
+        <h3><?php echo htmlspecialchars($row['nome']); ?></h3>
         <p>R$ <?php echo number_format($row['preco'], 2, ',', '.'); ?></p>
-        <a href="/Ecommerce/pages/carrinho.php?add=<?php echo $row['id']; ?>">Adicionar ao carrinho</a>
+
+        <!-- Botão para adicionar ao carrinho -->
+        <a href="/Ecommerce/pages/carrinho.php?add=<?php echo $row['id']; ?>">🛒 Adicionar ao carrinho</a><br>
+
+        <!-- Botão para desfavoritar -->
+        <a href="?remover=<?php echo $row['id']; ?>" style="color: red;">❌ Desfavoritar</a>
     </div>
 <?php
 }
