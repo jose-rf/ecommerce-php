@@ -109,7 +109,7 @@ if (!empty($_GET)) {
   <?php endif;
 
   $stmt->close();
-}
+} //comentando apenas para modificar o arquivo e ve se o commit vai funcionar agora
 ?>
 
 <?php include('includes/rodape.php'); ?>
