@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include('includes/db.php'); 
 
@@ -26,3 +27,9 @@ $categorias = $conn->query("SELECT * FROM categorias");
 
   <button type="submit">🔍 Pesquisar</button>
 </form>
+=======
+    <form method="GET" action="resultadosbusca.php" class="barra-pesquisa">
+        <input type="text" name="busca" placeholder="Buscar produtos..." required>
+        <button type="submit">🔍</button>
+    </form>
+>>>>>>> 08164964309196dd6220f2f30f3e30616a071e0f
